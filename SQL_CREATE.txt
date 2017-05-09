@@ -1,0 +1,46 @@
+CREATE TABLE Region (
+	id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	name TEXT
+)
+
+
+CREATE TABLE JobCategory (
+	id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	Category TEXT
+)
+
+
+CREATE TABLE JobType (
+	id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	type 	TEXT
+)
+
+
+CREATE TABLE Company (
+	id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	name TEXT,
+	address TEXT,
+	regionId INTEGER
+)
+
+
+CREATE TABLE JobAd (
+	id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	name TEXT,
+	description TEXT,
+	categoryId INTEGER,
+	jobTypeId INTEGER,
+	companyId INTEGER
+)
+
+
+CREATE TABLE User (
+	id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	name TEXT,
+	surname TEXT,
+	email TEXT,
+	jobAdId INTEGER,
+	employer TEXT,
+	companyId INTEGER,
+	regionID INTEGER
+)

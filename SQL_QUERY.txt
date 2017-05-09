@@ -1,0 +1,50 @@
+Q: How many jobs are in each of the regions?
+--------------------------------------------
+SELECT 
+  COUNT(*) AS 'št. del. mest', 
+  Region.name AS Regija 
+FROM JobAd
+JOIN Region ON Region.id = Company.regionId
+JOIN Company ON Company.id = JobAd.companyId
+GROUP BY Region.name
+ORDER BY COUNT(*) DESC
+
+
+
+
+Q: Which company offers IT jobs? 
+--------------------------------------------
+SELECT
+  JobAd.name AS 'Delovno mesto', 
+  Company.name AS 'Podjetje', 
+  Region.name AS 'Regija' 
+FROM Company
+JOIN JobCategory ON JobCategory.id = JobAd.categoryId
+JOIN JobAd ON JobAd.companyId = Company.id
+JOIN Region ON Region.id = Company.regionId
+WHERE JobCategory.id = 1
+
+
+
+
+Q: Who applied for an accountant?
+--------------------------------------------
+SELECT User.name, User.surname, JobCategory.Category, Company.name AS Podjetje
+FROM User
+JOIN JobCategory ON JobCategory.id = JobAd.categoryId
+JOIN JobAd ON JobAd.id = User.jobAdId
+JOIN Company ON Company.id = JobAd.companyId
+WHERE JobCategory.id = 2
+
+
+
+
+
+Q: How many of the jobs are full-time jobs?
+--------------------------------------------
+SELECT   
+  COUNT(*) AS 'št. del. mest', 
+  JobType.type AS 'vrsta dela'
+FROM JobAd
+JOIN JobType ON JobType.id = JobAd.jobTypeId
+GROUP BY JobType.id

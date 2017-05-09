@@ -1,0 +1,53 @@
+INSERT INTO Region (name) 
+VALUES  
+	('osrednjeslovenska'),
+	('dolenjska'),
+	('štajerska'),
+	('gorenjska'),
+	('primorska')
+
+
+
+INSERT INTO JobType (type) 
+VALUES  
+	('fullTime'),
+	('partTime'),
+	('student')
+
+
+
+INSERT INTO Company (name, address, regionId) 
+VALUES  
+	('Krka', 'Šmarješka cesta 6, 8000 Novo mesto', 2),
+	('Pivovarna Laško', 'Trubarjeva ulica 28, 3270 Laško', 3),
+	('Revoz', 'Belokranjska c. 4, 8000 Novo mesto', 2),
+	('Lek', 'Verovškova ulica 57, 1000 Ljubljana', 1),
+	('Luka Koper', 'Vojkovo nabrežje 38, 6501 Koper', 5),
+	('Sava', 'Škofjeloška cesta 6, 4000 Kranj', 4),
+	('Pivovarna Laško', 'Leskoškova 9, 1000 Ljubljana', 1)
+
+
+
+INSERT INTO JobAd (name, description, categoryId, jobTypeId, companyId)
+VALUES
+	('Voznik kamiona', NULL, 4, 1, 7),
+	('Promotor/ka', NULL, 5, 3, 6),
+	('Voznik', NULL, 4, 2, 5),
+	('Prodaja', NULL, 3, 2, 4),
+	('Raèunovodja', NULL, 2, 1, 3),
+	('Programer', NULL, 1, 2, 3),
+	('Raèunovodja/Administrator', NULL, 2, 1, 2),
+	('Programiranje', NULL, 1, 1, 1)
+
+
+
+INSERT INTO User (name, surname, email, jobAdId)
+VALUES
+	('Ivan', 'Cankariè', 'ivcan@mejl.si', 3),
+	('Ivana', 'Kofetarica', 'i.kof@mejl.si', 2),
+	('France', 'Prešernov', 'frapre@mejl.si', 6),
+	('Matija', 'Izgubec', 'matizgub@mejl.si', 1),
+	('Nuša', 'Direndaj', 'nu.dir@mejl.si', 4),
+	('Peter', 'Klepeè', '5rklep@mejl.si', 5),
+	('Lily', 'Noviè', 'lilnew@mejl.si', 7),
+	('Martin', 'Krpanov', 'marty@mejl.si', 8)
